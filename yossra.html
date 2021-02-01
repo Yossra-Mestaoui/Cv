@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Yossra's site </title>
+    <link rel="shortcut icon" href="images/icon.png"/>
+    <style type ="text/CSS">
+    body{margin: 0px;
+        padding: 0px;
+        background-color: #161616;}
+    html{
+        scroll-behavior: smooth;
+    }
+    ul{list-style: none;}
+    a{text-decoration: none;}
+    #main{width: 100%;
+         height: 100vh;
+          box-sizing: border-box;
+           background-color: #edf1fd;
+            position: relative; 
+            background-image:url("photo.jpg") ;
+            background-repeat:no-repeat;
+            background-size:390px; 
+            background-position: right bottom;
+            }
+    nav{
+        display: flex;
+         justify-content:space-between;
+          align-items: center; 
+          text-transform: uppercase;
+          font-weight: 600;
+           letter-spacing: 2px;
+           font-family: calibri;
+           position: fixed;
+           top: 0;
+           left: 0; 
+           width: 100%; 
+           box-sizing: border-box; 
+           padding: 10px 50px ;
+           background-color: #f4f7ff;
+           box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+           z-index: 1; }
+    .menu{
+        display: flex
+        }
+    .menu li a {
+         padding: 10px 15px; 
+         color: #6c707c; 
+         font: size 12px;}
+    .lang {color: #292929;}
+    .logo {font-size: 25px; 
+           font-weight: bold; 
+           color: #292929; 
+           font-family: poppins;}
+    .menu li a:hover , 
+    .active{background-color: #292929;
+            color: #ffffff !important; 
+            font-weight: 700; 
+            transition: all ease 0.4s;}
+    .name{font-family: calibri; 
+          width: 500px;
+          position: absolute;
+          left: 20%;top: 50%;
+          transform: translate(-20%,-50%);}
+    .name p:nth-child(1),
+    .name.details{color: #6c707c; 
+                 font-size: 16px;}
+    .name h1 {font-family: poppins; 
+              font-size: 40px; 
+              margin: 0px; 
+              letter-spacing: 3px; 
+              color: #292929;}
+    .cv-btn{ width: 200px; 
+             height: 45px; 
+             display: flex; 
+             justify-content: center; 
+             align-items: center; 
+             background-color: #292929; color: #ffffff;}
+    .cv-btn:hover{
+        background-color: #131313;
+        transition: all ease 0.5s;
+    }
+    .social { position: absolute;
+              left: 50px;
+              bottom: 50px;
+              display: flex;
+    }
+    .social a {
+        margin: 6px 12px;
+    }
+    .social i {
+        color: rgba(18, 17, 17,0.4);
+        font-size: 19px;
+    }
+    .social a:hover i{
+        color: #17d1ac;
+        transition: all ease 0.5s;
+    }
+    .arrow{
+        align-self: end;
+        width: 50%;
+        height: 15%;
+        margin-bottom: 4em;
+        position: absolute;
+        bottom: 0px;
+        left: -3%;
+        border-right: 1px solid rgba(41, 41, 41, 0.3);
+    }
+    .arrow ::after {
+        content: '';
+        position:absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 11px 0px 11px;
+        border-color: #292929 transparent transparent transparent;
+        right: -0.7em;
+        bottom: -2px;
+         
+    }
+    #about{
+        height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 5% 0px 5%;
+    }
+    .about-t{
+        font-family: calibri;
+        width: 50%;
+    }
+    .about-t h1 {
+        font-size: 5rem;
+        color: #17d1ac;
+    }
+    .about-t h2 {
+        font-size: 3rem;
+        color: #ffffff;
+        font-weight: 400;
+    }
+    .about-t h1 h2 {
+        margin: 0px;
+        padding: 0px;
+    }
+    .about-t p{
+        font-size: 1.2rem;
+        color: rgba(251,251, 251,0.90);
+    }
+    .about-t button{
+        width: 180px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #17d1ac;
+    }
+    .about-t button:hover {
+        background-color: #ffffff;
+        transition: all ease 0.3s;
+    }
+    #services{
+        width: 100%;
+        height: 100vh;
+        font-family: calibri;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+    }
+    .s-head h1{
+        color:#ffffff;
+        font-size: 3rem;
+        margin: 0px;
+        padding: 0px;
+    }
+    .s-head p{
+        color: rgba(249, 249, 249,0.30);
+        font-size: 1rem;
+        margin: 0px;
+        padding: 0px;
+    }
+    .s-head{
+        text-align: center;
+        margin: 20px 0px;
+    }
+    .box{
+        background-color: #22bb22;
+        width: 350px;
+        height: 500px;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-box{
+        width: 100%;
+        height: 70%;
+    }
+    .img-box img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+    }
+    .text-box{
+        width: 100%;
+        height: 30%;
+        background-color: #1e1e1e;
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+    }
+    .text-box a{
+        margin: 0px;
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-family: calibri;
+        display: block;
+        display: -webkit-box;
+        max-width: 80%;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+    }
+    .type{
+        font-family: calibri;
+        color: #ffffff;
+        background-color: #151515;
+        padding: 10px 15px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 2px 2px 12px rgba(0,0, 0, 0.2)
+    }
+    .box:hover{
+        transform: translateY(-10px);
+        transition:  all ea4 0.3s;
+    }
+    .text-box a:hover{
+        color: rgba(255, 255, 255, 0.50);
+    }
+    #portfolio{
+        width: 100%;
+        box-sizing: border-box;
+        font-family: calibri;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 2% 20px 2%;
+      }
+    .p-heading{
+        font-family: calibri;
+        font-size: 1.7rem;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 400;
+        padding: 10px 20px;
+        background-color: #292929;
+        letter-spacing: 2px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    .p-box{
+        background-color: #1f1f1f;
+        overflow: hidden;
+        border-radius:10px;
+        box-shadow: 2px 2px 13px rgba(0,0, 0, 0.3);
+        position: relative;
+    }
+    .p-b-container{
+        width: 90%;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 10px;
+    }
+    .text-overlay{
+        font-family: calibri;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(23, 209, 172, 0.89);
+        display: none;
+    }
+    .text-overlay p{
+        color: #ffffff;
+        font-size: 1.2rem;
+        margin: 0px;
+    }
+    .text-overlay h1{
+        color: #ffffff;
+        font-size: 2.2rem;
+        margin: 0px;
+        padding: 0px;
+        letter-spacing: 2px;
+    }
+    .p-box:hover .text-overlay{
+        display: flex;
+    }
+    .p-box img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #contact h1{
+        font-size: 2rem;
+        font-family: calibri;
+        margin: 10px;
+        padding: 5px;
+        letter-spacing: 4px;
+        border-bottom: 2px solid #1e1e1e;
+    }
+    #contact{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        background-color: #f4f7ff;
+        margin: 20px 0px;
+        box-sizing: border-box;
+        box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
+    }
+    #contact a{
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: calibri;
+        width: 150px;
+        height: 40px;
+        margin: 10px;
+        background-color: #1e1e1e;
+        box-shadow:2px 5px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+    #contact a:hover{
+        background-color: #17d1ac;
+        color: #000000;
+        transition: all ease 0.5s;
+        font-weight: 700;
+    }
+    #form{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #form form{
+        display: flex;
+        width: 70%;
+        height: 60vh;
+        background-color: #1a1a1a;
+        box-shadow: 2px 12px 20px , rgba(0, 0, 0, 0.2);
+    }
+    .left{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right{
+        width: 60%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .left-h{
+        font-family: calibri;
+        color: #ffffff;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    .f-email , .f-name{
+      display: flex;
+      flex-direction: column;
+      font-family: calibri;
+    }
+    .f-email font, .f-name font{
+        color: #bfbfbf;
+        font-size: 22px;
+    }
+    .f-email input, .f-name input{
+        height: 30px;
+        width: 250px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-bottom: 1px solid #929292;
+        color: #ffffff;
+        margin: 10px 0px;
+    }
+    .f-email input::placeholder , 
+    .f-name input::placeholder{
+        opacity: 0.5s;
+        letter-spacing: 1px;
+    }
+    .f-email input:focus ,
+    .f-name input:focus{
+        border-bottom: 1px solid #17d1ac;
+        border-top
+        : 1px solid #17d1ac;
+        transition: all ease 0.5s;
+    }
+    .message font{
+        font-size: 18px;
+        color: #bfbfbf;
+        font-family: calibri;
+    }
+    .message{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .right textarea{
+        width: 100% !important;
+        height: 290px !important;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        box-sizing: border-box;
+        color: #bfbfbf;
+        font-size: 16px;
+    }
+    .right textarea::placeholder{
+        color: #4e4e4e;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-family: calibri;
+    }
+    .right button{
+        width: 100%;
+        height: 50px;
+        background-color: #1ed98b;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        margin: 0px;
+        color: #1b1b1b;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform:uppercase;
+    }
+    .right button:hover{
+        background-color: #ffffff;
+        transition: ease-in 0.5s;
+    }
+
+    </style>
+
+    <link rel="shortcut icon " href="...........">
+    <link rel="stylesheet" type="text/css" href="samer1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" 
+    crossoring="anonymous"></script>
+</head>
+<body>
+    <section id="main">
+        <nav>
+            <a href="#" class="logo">MY</a>
+            <ul class="menu">
+                <li> <a href="#" class="active"> Home </a></li>
+                <li> <a href="#about">About</a> </li>
+                <li> <a href="#service">Services</a></li>
+                <li> <a href="#portfolio">Portfolio</a></li>
+                <li> <a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#" class="lang">En</a>
+        </nav>
+        <div class="name">
+            <p>Hello</p>
+            <h1>I'm <font color="#17d1ac"> Mestaoui </font>Yossra </h1>
+            <p class="details">
+                <font style="color: #c2f3ab71;">(A modifier)</font> I'm a first year student in computer technology at ISET Mahdia
+            </p>
+            <a href="#" class="cv-btn">Download CV</a>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/yossra.mst.14"> <i class="fab fa-facebook-f"> </i></a>
+            <a href="https://github.com/Yossra-Mestaoui"> <i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/yossra_mst/?hl=fr"> <i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yossra-mestaoui-94a602205/"> <i class="fab fa-linkedin"></i></a>
+        </div>
+<div class="arrow">
+
+</div>
+    </section>
+    <!-- section about-->
+    <section id="about">
+<div class="about-t">
+    <h1>About us</h1>
+    <h2>Freelancing FrontEnd Developer</h2>
+    <p><font style="color: #c2f3ab71;">(A modifier)</font>enjoy the ultimite web design editor divi is like photoshop or Sketch for the web 
+        I'm a first year student in computer technology at ISET Mahdia enjoy the ultimite web design editor divi is like photoshop or Sketch for the web  
+        I'm a first year student in computer technology at ISET Mahdia
+    </p>
+    <button>More Details</button>
+</div>
+</section>
+<section id="service">
+    <div class="s-head">
+        <h1>Services</h1>
+        <p><font style="color: #c2f3ab71;">(A modifier)</font>Web Developpement: html,CSS...</p>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="img-box">
+                <div class="type"> Front-end</div>
+                <img src="images/s1.png" >
+                </div>
+        
+        <div class="text-box">
+            <a href="#"><font style="color: #c2f3ab71;">(A modifier)</font> enjoy the ultimite web design editor divi is like photoshop or Sketch for the web 
+                I'm a first year student in computer technology at ISET Mahdia enjoy the ultimite web design editor divi is like photoshop or Sketch for the web  
+                (a modifier)</a>
+            </div>
+        </div>        
+<!--box2-->
+        <div class="box">
+            <div class="img-box">
+                <div class="type"> Front-end</div>
+                <img src="images/s2.png" >
+                </div>
+        
+        <div class="text-box">
+            <a href="#"><font style="color: #c2f3ab71;">(A modifier)</font> enjoy the ultimite web design editor divi is like photoshop or Sketch for the web 
+                I'm a first year student in computer technology at ISET Mahdia enjoy the ultimite web design editor divi is like photoshop or Sketch for the web  
+                (a modifier)</a>
+            </div>
+        </div> 
+ <!--box3-->
+        <div class="box">
+            <div class="img-box">
+                <div class="type"> Front-end</div>
+                <img src="images/s3.jpg" >
+                </div>
+        
+        <div class="text-box">
+            <a href="#"> <font style="color: #c2f3ab71;">(A modifier)</font>" the ultimite web design editor divi is like photoshop or Sketch for the web 
+                I'm a first year student in computer technology at ISET Mahdia enjoy the ultimite web design editor divi is like photoshop or Sketch for the web  
+                (a modifier)</a>
+
+        </div>  
+    </div>
+
+</section>
+<section id="portfolio">
+    <h1 class="p-heading">Portfolio</h1>
+    <!--box container-->
+    <div class="p-b-container">
+      <!--box1-->
+     <div class="p-box">
+         <!--text-->
+         <div class="text-overlay">
+             <h1>Writing</h1>
+             <p> Client Project</p>
+         </div>
+   <!--image-->
+    <img src="images/w1.jpg" alt="portfolio">
+    </div>
+
+    <div class="p-box">
+        <!--text-->
+        <div class="text-overlay">
+            <h1>Writing</h1>
+            <p> Client Project</p>
+        </div>
+  <!--image-->
+   <img src="images/w2.jpg" alt="portfolio">
+   </div>
+
+   <div class="p-box">
+    <!--text-->
+    <div class="text-overlay">
+        <h1>Writing</h1>
+        <p> Client Project</p>
+    </div>
+<!--image-->
+<img src="images/w3.jpg" alt="portfolio">
+</div>
+
+<div class="p-box">
+    <!--text-->
+    <div class="text-overlay">
+        <h1>Writing</h1>
+        <p> Client Project</p>
+    </div>
+<!--image-->
+<img src="images/w4.jpg" alt="portfolio">
+</div>
+
+<div class="p-box">
+    <!--text-->
+    <div class="text-overlay">
+        <h1>Writing</h1>
+        <p> Client Project</p>
+    </div>
+<!--image-->
+<img src="images/w5.jpg" alt="portfolio">
+</div>
+
+<div class="p-box">
+    <!--text-->
+    <div class="text-overlay">
+        <h1>Writing</h1>
+        <p> Client Project</p>
+    </div>
+<!--image-->
+<img src="images/w6.jpg" alt="portfolio">
+</div>
+    </div>
+</section>
+<section id="contact">
+    <h1>If You Have Any Project Contact Me</h1>
+    <a href="#">Contact </a>
+</section>
+    <!--contact forml-->
+    <section id="form">
+        <form>
+            <!--left-->
+            <div class="left">
+                <!--head-->
+                <h1 class="left-h"> <font style="border-bottom: 3px solid #1ed98b;">Writ</font>e Us </h1>
+                   <div class="f-name">
+                       <!--name-->
+                       <font>Name</font>
+                       <input type="text" placeholder="Put Your Name">
+                    </div>
+                    <div class="f-email">
+                        <!--email-->
+                        <font>Email</font>
+                        <input type="email" placeholder="Example@hotmail.com">
+                    </div>
+                </div>    
+            <!--right-->
+            <div class="right">
+                <!--message-->
+                <div class="message">
+                    <font>Message</font>
+                    <textarea name="message" rows="5" cols="20" placeholder="Write message"></textarea>
+
+                </div>
+                <!--submit-->
+                <button>submit</button>
+
+            </div>        
+               
+        </form>
+
+    
+
+</section>
+</body>
+</html>
